@@ -7,13 +7,26 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-logo">AKSHAYA.</span>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <span class="loader-pct" id="loaderPct">0%</span>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
-    <a href="#" class="nav-logo">AKSHAYA.</a>
+    <a href="#" class="nav-logo">AKSHAYA<span class="gold">.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#expertise">Expertise</a></li>
@@ -30,17 +43,43 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+    <!-- Animated bg particles -->
+    <canvas class="hero-particles" id="particleCanvas"></canvas>
+
     <div class="hero-bg">
-      <!-- Avatar video replaces static image -->
-      <video class="hero-avatar" autoplay muted loop playsinline id="avatarVideo">
-        <source src="avatar.mp4" type="video/mp4" />
-      </video>
+      <!-- Video on right side -->
+      <div class="hero-video-wrap" id="heroVideoWrap">
+        <video class="hero-avatar" autoplay muted loop playsinline id="avatarVideo">
+          <source src="avatar.mp4" type="video/mp4" />
+        </video>
+        <!-- Glow ring around video -->
+        <div class="video-glow"></div>
+        <!-- Audio control button -->
+        <button class="audio-toggle" id="audioToggle" aria-label="Toggle audio">
+          <span class="audio-icon muted" id="audioIcon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="audio-label" id="audioLabel">UNMUTE</span>
+        </button>
+      </div>
       <div class="hero-overlay"></div>
     </div>
+
     <div class="hero-content">
-      <p class="hero-eyebrow">UI/UX Designer &bull; Web Developer &bull; Data Science</p>
-      <h1 class="hero-name">AKSHAYA R</h1>
-      <h2 class="hero-tagline">Designing Experiences.<br/>Building Solutions.</h2>
+      <p class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        UI/UX Designer &bull; Web Developer &bull; Data Science
+      </p>
+      <h1 class="hero-name">
+        <span class="name-line" data-text="AKSHAYA">AKSHAYA</span>
+        <span class="name-line name-r" data-text="R.">R.</span>
+      </h1>
+      <h2 class="hero-tagline">
+        <span class="tagline-word">Designing</span> <span class="tagline-word gold-word">Experiences.</span><br/>
+        <span class="tagline-word">Building</span> <span class="tagline-word gold-word">Solutions.</span>
+      </h2>
       <p class="hero-bio">
         M.Sc Data Science Student at Women's Christian College<br/>
         and Marketing Intern at Hive Flexible Workspaces.<br/>
@@ -48,10 +87,25 @@
         development, research, and data-driven thinking.
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects →</a>
-        <a href="#" class="btn btn-outline" id="downloadResume">Download Resume ↓</a>
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#" class="btn btn-outline" id="downloadResume">
+          <span>Download Resume</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+
+      <!-- Floating skill chips -->
+      <div class="hero-chips">
+        <span class="chip">Figma</span>
+        <span class="chip">React</span>
+        <span class="chip">Python</span>
+        <span class="chip">ML</span>
       </div>
     </div>
+
     <div class="hero-scroll">
       <div class="scroll-ring">
         <svg viewBox="0 0 100 100" class="scroll-text-svg">
@@ -65,27 +119,57 @@
     </div>
   </section>
 
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>UI/UX Design</span><span class="marquee-dot">✦</span>
+      <span>Web Development</span><span class="marquee-dot">✦</span>
+      <span>Data Science</span><span class="marquee-dot">✦</span>
+      <span>Machine Learning</span><span class="marquee-dot">✦</span>
+      <span>Figma</span><span class="marquee-dot">✦</span>
+      <span>React.js</span><span class="marquee-dot">✦</span>
+      <span>Python</span><span class="marquee-dot">✦</span>
+      <span>Branding</span><span class="marquee-dot">✦</span>
+      <span>UI/UX Design</span><span class="marquee-dot">✦</span>
+      <span>Web Development</span><span class="marquee-dot">✦</span>
+      <span>Data Science</span><span class="marquee-dot">✦</span>
+      <span>Machine Learning</span><span class="marquee-dot">✦</span>
+      <span>Figma</span><span class="marquee-dot">✦</span>
+      <span>React.js</span><span class="marquee-dot">✦</span>
+      <span>Python</span><span class="marquee-dot">✦</span>
+      <span>Branding</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
+
   <!-- STATS BAR -->
-  <div class="stats-bar">
+  <div class="stats-bar" id="stats">
     <div class="stat">
       <span class="stat-icon">💼</span>
-      <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+      <div class="stat-count">
+        <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+      </div>
       <span class="stat-label">Internships</span>
     </div>
     <div class="stat">
       <span class="stat-icon">&lt;/&gt;</span>
-      <span class="stat-num" data-target="1">0</span><span class="stat-plus">+</span>
+      <div class="stat-count">
+        <span class="stat-num" data-target="1">0</span><span class="stat-plus">+</span>
+      </div>
       <span class="stat-label">Years of Coding</span>
     </div>
     <div class="stat">
       <span class="stat-icon">🏆</span>
-      <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+      <div class="stat-count">
+        <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+      </div>
       <span class="stat-label">Certifications</span>
     </div>
     <div class="stat">
       <span class="stat-icon">👥</span>
-      <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
-      <span class="stat-label">Tools &amp; Technologies</span>
+      <div class="stat-count">
+        <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+      </div>
+      <span class="stat-label">Tools & Technologies</span>
     </div>
   </div>
 
@@ -93,42 +177,43 @@
   <section class="section about-section" id="about">
     <div class="section-inner">
       <div class="about-left">
-        <p class="section-num">01.</p>
-        <h3 class="section-heading gold">ABOUT ME</h3>
+        <p class="section-eyebrow">01 — ABOUT ME</p>
+        <h3 class="section-heading gold">Who I Am</h3>
         <p class="about-text">I'm a creative problem solver who blends design thinking with technology and data.</p>
         <p class="about-text">My goal is to build user-centered digital experiences that are meaningful, functional and impactful.</p>
         <a href="#contact" class="btn btn-outline-gold">Know More About Me →</a>
       </div>
       <div class="about-right">
         <div class="about-info-grid">
-          <div class="info-card">
+          <div class="info-card reveal-card">
             <span class="info-icon">🎓</span>
             <div>
               <p class="info-label gold">Education</p>
               <p class="info-val">M.Sc Data Science</p>
-              <p class="info-val">Women's Christian College</p>
+              <p class="info-val dim">Women's Christian College</p>
             </div>
           </div>
-          <div class="info-card">
+          <div class="info-card reveal-card">
             <span class="info-icon">📍</span>
             <div>
               <p class="info-label gold">Location</p>
               <p class="info-val">Chennai, India</p>
             </div>
           </div>
-          <div class="info-card">
+          <div class="info-card reveal-card">
             <span class="info-icon">💼</span>
             <div>
               <p class="info-label gold">Experience</p>
               <p class="info-val">Marketing Intern</p>
-              <p class="info-val">Hive Flexible Workspaces</p>
+              <p class="info-val dim">Hive Flexible Workspaces</p>
             </div>
           </div>
-          <div class="info-card">
+          <div class="info-card reveal-card">
             <span class="info-icon">⚡</span>
             <div>
               <p class="info-label gold">Availability</p>
               <p class="info-val">Open to Opportunities</p>
+              <span class="availability-dot"></span>
             </div>
           </div>
         </div>
@@ -141,11 +226,13 @@
   <!-- EXPERTISE -->
   <section class="section expertise-section" id="expertise">
     <div class="section-inner">
-      <p class="section-num">02.</p>
-      <h3 class="section-heading gold">MY EXPERTISE</h3>
+      <p class="section-eyebrow">02 — EXPERTISE</p>
+      <h3 class="section-heading gold">What I Do</h3>
       <div class="expertise-grid">
         <div class="expertise-card">
-          <div class="expertise-icon">🚀</div>
+          <div class="expertise-icon-wrap">
+            <div class="expertise-icon">🚀</div>
+          </div>
           <h4>UI/UX Design</h4>
           <ul>
             <li>User Research</li>
@@ -153,9 +240,12 @@
             <li>Prototyping</li>
             <li>Design Systems</li>
           </ul>
+          <div class="card-line"></div>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">⚙️</div>
+          <div class="expertise-icon-wrap">
+            <div class="expertise-icon">⚙️</div>
+          </div>
           <h4>Web Development</h4>
           <ul>
             <li>HTML, CSS, JS</li>
@@ -163,9 +253,12 @@
             <li>Responsive Design</li>
             <li>Tailwind CSS</li>
           </ul>
+          <div class="card-line"></div>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">📊</div>
+          <div class="expertise-icon-wrap">
+            <div class="expertise-icon">📊</div>
+          </div>
           <h4>Data Science</h4>
           <ul>
             <li>Machine Learning</li>
@@ -173,9 +266,12 @@
             <li>NLP</li>
             <li>Data Visualization</li>
           </ul>
+          <div class="card-line"></div>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">🛠️</div>
+          <div class="expertise-icon-wrap">
+            <div class="expertise-icon">🛠️</div>
+          </div>
           <h4>Tools</h4>
           <ul>
             <li>Figma</li>
@@ -183,9 +279,12 @@
             <li>Git &amp; GitHub</li>
             <li>Google Colab</li>
           </ul>
+          <div class="card-line"></div>
         </div>
         <div class="expertise-card">
-          <div class="expertise-icon">📈</div>
+          <div class="expertise-icon-wrap">
+            <div class="expertise-icon">📈</div>
+          </div>
           <h4>Marketing</h4>
           <ul>
             <li>Content Strategy</li>
@@ -193,6 +292,7 @@
             <li>Branding</li>
             <li>Campaign Design</li>
           </ul>
+          <div class="card-line"></div>
         </div>
       </div>
     </div>
@@ -205,46 +305,177 @@
     <div class="section-inner">
       <div class="projects-header">
         <div>
-          <p class="section-num">03.</p>
-          <h3 class="section-heading gold">FEATURED PROJECTS</h3>
+          <p class="section-eyebrow">03 — PROJECTS</p>
+          <h3 class="section-heading gold">Featured Work</h3>
         </div>
         <a href="#" class="view-all">View All Projects →</a>
       </div>
       <div class="projects-grid">
         <div class="project-card" data-label="AI Productivity Platform">
           <div class="project-thumb" style="background:#0D1B2A;">
-            <img src="https://via.placeholder.com/300x180/0D1B2A/7c6af7?text=FocusPilot" alt="FocusPilot" />
+            <div class="project-thumb-inner">
+              <img src="https://via.placeholder.com/300x180/0D1B2A/7c6af7?text=FocusPilot" alt="FocusPilot" />
+            </div>
+            <div class="project-overlay">
+              <span class="project-cta">View Case Study →</span>
+            </div>
           </div>
-          <p class="project-name">FocusPilot</p>
-          <p class="project-sub">AI Productivity Platform</p>
+          <div class="project-meta">
+            <p class="project-name">FocusPilot</p>
+            <p class="project-sub">AI Productivity Platform</p>
+          </div>
         </div>
         <div class="project-card" data-label="Blockchain Identity Platform">
           <div class="project-thumb" style="background:#0A1628;">
-            <img src="https://via.placeholder.com/300x180/0A1628/4fc3f7?text=TrustChain" alt="TrustChain" />
+            <div class="project-thumb-inner">
+              <img src="https://via.placeholder.com/300x180/0A1628/4fc3f7?text=TrustChain" alt="TrustChain" />
+            </div>
+            <div class="project-overlay">
+              <span class="project-cta">View Case Study →</span>
+            </div>
           </div>
-          <p class="project-name">TrustChain</p>
-          <p class="project-sub">Blockchain Identity Platform</p>
+          <div class="project-meta">
+            <p class="project-name">TrustChain</p>
+            <p class="project-sub">Blockchain Identity Platform</p>
+          </div>
         </div>
         <div class="project-card" data-label="Simplifying First Votes">
           <div class="project-thumb" style="background:#f5f5f5;">
-            <img src="https://via.placeholder.com/300x180/f5f5f5/333?text=VoteEase" alt="VoteEase" />
+            <div class="project-thumb-inner">
+              <img src="https://via.placeholder.com/300x180/f5f5f5/333?text=VoteEase" alt="VoteEase" />
+            </div>
+            <div class="project-overlay">
+              <span class="project-cta">View Case Study →</span>
+            </div>
           </div>
-          <p class="project-name">VoteEase</p>
-          <p class="project-sub">Simplifying First Votes</p>
+          <div class="project-meta">
+            <p class="project-name">VoteEase</p>
+            <p class="project-sub">Simplifying First Votes</p>
+          </div>
         </div>
         <div class="project-card" data-label="Transit Experience Redesign">
           <div class="project-thumb" style="background:#1a1a2e;">
-            <img src="https://via.placeholder.com/300x180/1a1a2e/fff?text=Chennai+Metro" alt="Chennai Metro" />
+            <div class="project-thumb-inner">
+              <img src="https://via.placeholder.com/300x180/1a1a2e/fff?text=Chennai+Metro" alt="Chennai Metro" />
+            </div>
+            <div class="project-overlay">
+              <span class="project-cta">View Case Study →</span>
+            </div>
           </div>
-          <p class="project-name">Chennai Metro</p>
-          <p class="project-sub">Transit Experience Redesign</p>
+          <div class="project-meta">
+            <p class="project-name">Chennai Metro</p>
+            <p class="project-sub">Transit Experience Redesign</p>
+          </div>
         </div>
         <div class="project-card" data-label="Recycling Awareness Platform">
           <div class="project-thumb" style="background:#1b3a1b;">
-            <img src="https://via.placeholder.com/300x180/1b3a1b/90ee90?text=Re:Start" alt="Re:Start" />
+            <div class="project-thumb-inner">
+              <img src="https://via.placeholder.com/300x180/1b3a1b/90ee90?text=Re:Start" alt="Re:Start" />
+            </div>
+            <div class="project-overlay">
+              <span class="project-cta">View Case Study →</span>
+            </div>
           </div>
-          <p class="project-name">Re:Start</p>
-          <p class="project-sub">Recycling Awareness Platform</p>
+          <div class="project-meta">
+            <p class="project-name">Re:Start</p>
+            <p class="project-sub">Recycling Awareness Platform</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- JOURNEY (Timeline) -->
+  <section class="section journey-section" id="journey">
+    <div class="section-inner">
+      <p class="section-eyebrow">04 — JOURNEY</p>
+      <h3 class="section-heading gold">My Story</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2022</span>
+            <h4>Started B.Sc Journey</h4>
+            <p>Began exploring technology, design, and data. First steps into coding and UI concepts.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2023</span>
+            <h4>First Internship</h4>
+            <p>Stepped into the professional world, applying design thinking and development skills in a real environment.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2024</span>
+            <h4>M.Sc Data Science</h4>
+            <p>Joined Women's Christian College to pursue advanced studies in Data Science, combining ML with design.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2025–Now</span>
+            <h4>Marketing Intern @ Hive</h4>
+            <p>Building brand presence, creating content strategies, and driving campaigns at Hive Flexible Workspaces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CERTIFICATES -->
+  <section class="section certs-section" id="certificates">
+    <div class="section-inner">
+      <p class="section-eyebrow">05 — CERTIFICATES</p>
+      <h3 class="section-heading gold">Credentials</h3>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-badge">🎯</div>
+          <div class="cert-info">
+            <p class="cert-name">Google UX Design</p>
+            <p class="cert-issuer">Google / Coursera</p>
+          </div>
+          <span class="cert-year">2024</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">🐍</div>
+          <div class="cert-info">
+            <p class="cert-name">Python for Data Science</p>
+            <p class="cert-issuer">IBM / Coursera</p>
+          </div>
+          <span class="cert-year">2023</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">🤖</div>
+          <div class="cert-info">
+            <p class="cert-name">Machine Learning Fundamentals</p>
+            <p class="cert-issuer">Stanford Online</p>
+          </div>
+          <span class="cert-year">2024</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">⚛️</div>
+          <div class="cert-info">
+            <p class="cert-name">React.js Development</p>
+            <p class="cert-issuer">Meta / Coursera</p>
+          </div>
+          <span class="cert-year">2024</span>
+        </div>
+        <div class="cert-card">
+          <div class="cert-badge">📊</div>
+          <div class="cert-info">
+            <p class="cert-name">Data Analytics</p>
+            <p class="cert-issuer">Google / Coursera</p>
+          </div>
+          <span class="cert-year">2023</span>
         </div>
       </div>
     </div>
@@ -256,11 +487,11 @@
   <section class="section contact-section" id="contact">
     <div class="section-inner contact-inner">
       <div class="contact-left">
-        <p class="section-num">04.</p>
-        <h2 class="contact-heading gold">LET'S BUILD<br/>SOMETHING<br/>MEANINGFUL.</h2>
+        <p class="section-eyebrow">06 — CONTACT</p>
+        <h2 class="contact-heading gold">LET'S BUILD<br/>SOMETHING<br/><span class="contact-heading-outline">MEANINGFUL.</span></h2>
       </div>
       <div class="contact-right">
-        <p class="contact-body">I'm always open to discussing new opportunities, interesting projects or collaborations.</p>
+        <p class="contact-body">I'm always open to discussing new opportunities, interesting projects or collaborations. Let's make something great together.</p>
         <div class="contact-links">
           <a href="https://linkedin.com/in/akshaya-r" target="_blank" class="contact-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -271,10 +502,10 @@
             GitHub
           </a>
           <a href="https://behance.net/akshucharu" target="_blank" class="contact-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.7zM15.971 13h4.06c-.intensity 2.44-2.951 2.52-4.06 0zM7.239 10.65c1.02-.43 1.615-1.226 1.615-2.475 0-1.876-1.354-3.175-4.165-3.175H1v12h3.766c2.938 0 4.97-1.283 4.97-3.672 0-1.438-.743-2.427-2.497-2.678zM3.6 7.1h1.2c1.054 0 1.75.422 1.75 1.4 0 .989-.696 1.5-1.75 1.5H3.6V7.1zm1.35 7.9H3.6v-2.9h1.35c1.302 0 2.05.526 2.05 1.45 0 .924-.748 1.45-2.05 1.45z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="7" width="7" height="2"/><path d="M2 16h7v-5H5.5A3.5 3.5 0 0 1 2 7.5V7h7a3 3 0 0 1 0 6H2v3zM14 7h8v2h-8zM18 11a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
             Behance
           </a>
-          <a href="mailto:akshaya@example.com" class="contact-btn">
+          <a href="mailto:akshaya@example.com" class="contact-btn contact-btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
             Email Me
           </a>
@@ -285,9 +516,9 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <span class="footer-logo">AKSHAYA.</span>
+    <span class="footer-logo">AKSHAYA<span class="gold">.</span></span>
     <span class="footer-copy">© 2026 Akshaya R. All rights reserved.</span>
-    <span class="footer-right">Designed &amp; Built with Passion ♥</span>
+    <span class="footer-right">Designed &amp; Built with <span class="gold">♥</span></span>
   </footer>
 
   <script src="script.js"></script>
