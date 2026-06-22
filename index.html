@@ -1,229 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Akshaya R | Portfolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshaya R — UI/UX Designer & Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-<!-- VIDEO BACKGROUND -->
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">AKSHAYA.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's Talk →</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<video autoplay muted loop playsinline class="background-video">
-    <source src="avatar.mp4.mp4" type="video/mp4">
-</video>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <!-- Avatar video replaces static image -->
+      <video class="hero-avatar" autoplay muted loop playsinline id="avatarVideo">
+        <source src="avatar.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">UI/UX Designer &bull; Web Developer &bull; Data Science</p>
+      <h1 class="hero-name">AKSHAYA R</h1>
+      <h2 class="hero-tagline">Designing Experiences.<br/>Building Solutions.</h2>
+      <p class="hero-bio">
+        M.Sc Data Science Student at Women's Christian College<br/>
+        and Marketing Intern at Hive Flexible Workspaces.<br/>
+        I create intuitive digital experiences through design,<br/>
+        development, research, and data-driven thinking.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects →</a>
+        <a href="#" class="btn btn-outline" id="downloadResume">Download Resume ↓</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-ring">
+        <svg viewBox="0 0 100 100" class="scroll-text-svg">
+          <path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+          <text font-size="9.5" fill="#C9952A" letter-spacing="2.5">
+            <textPath href="#circlePath">SCROLL TO EXPLORE • SCROLL TO EXPLORE •</textPath>
+          </text>
+        </svg>
+        <span class="scroll-arrow">↓</span>
+      </div>
+    </div>
+  </section>
 
-<div class="video-overlay"></div>
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-icon">💼</span>
+      <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Internships</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon">&lt;/&gt;</span>
+      <span class="stat-num" data-target="1">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Years of Coding</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon">🏆</span>
+      <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Certifications</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon">👥</span>
+      <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Tools &amp; Technologies</span>
+    </div>
+  </div>
 
-<!-- NAVBAR -->
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="section-inner">
+      <div class="about-left">
+        <p class="section-num">01.</p>
+        <h3 class="section-heading gold">ABOUT ME</h3>
+        <p class="about-text">I'm a creative problem solver who blends design thinking with technology and data.</p>
+        <p class="about-text">My goal is to build user-centered digital experiences that are meaningful, functional and impactful.</p>
+        <a href="#contact" class="btn btn-outline-gold">Know More About Me →</a>
+      </div>
+      <div class="about-right">
+        <div class="about-info-grid">
+          <div class="info-card">
+            <span class="info-icon">🎓</span>
+            <div>
+              <p class="info-label gold">Education</p>
+              <p class="info-val">M.Sc Data Science</p>
+              <p class="info-val">Women's Christian College</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">📍</span>
+            <div>
+              <p class="info-label gold">Location</p>
+              <p class="info-val">Chennai, India</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">💼</span>
+            <div>
+              <p class="info-label gold">Experience</p>
+              <p class="info-val">Marketing Intern</p>
+              <p class="info-val">Hive Flexible Workspaces</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">⚡</span>
+            <div>
+              <p class="info-label gold">Availability</p>
+              <p class="info-val">Open to Opportunities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<nav class="navbar">
+  <div class="divider"></div>
 
-<div class="logo">
-AKSHAYA.
-</div>
+  <!-- EXPERTISE -->
+  <section class="section expertise-section" id="expertise">
+    <div class="section-inner">
+      <p class="section-num">02.</p>
+      <h3 class="section-heading gold">MY EXPERTISE</h3>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <div class="expertise-icon">🚀</div>
+          <h4>UI/UX Design</h4>
+          <ul>
+            <li>User Research</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+            <li>Design Systems</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">⚙️</div>
+          <h4>Web Development</h4>
+          <ul>
+            <li>HTML, CSS, JS</li>
+            <li>React.js</li>
+            <li>Responsive Design</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">📊</div>
+          <h4>Data Science</h4>
+          <ul>
+            <li>Machine Learning</li>
+            <li>Data Analytics</li>
+            <li>NLP</li>
+            <li>Data Visualization</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">🛠️</div>
+          <h4>Tools</h4>
+          <ul>
+            <li>Figma</li>
+            <li>VS Code</li>
+            <li>Git &amp; GitHub</li>
+            <li>Google Colab</li>
+          </ul>
+        </div>
+        <div class="expertise-card">
+          <div class="expertise-icon">📈</div>
+          <h4>Marketing</h4>
+          <ul>
+            <li>Content Strategy</li>
+            <li>Social Media</li>
+            <li>Branding</li>
+            <li>Campaign Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<ul class="nav-links">
-<li><a href="#about">About</a></li>
-<li><a href="#expertise">Expertise</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#journey">Journey</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <div class="divider"></div>
 
-<a href="#contact" class="nav-btn">
-Let's Talk
-</a>
+  <!-- PROJECTS -->
+  <section class="section projects-section" id="projects">
+    <div class="section-inner">
+      <div class="projects-header">
+        <div>
+          <p class="section-num">03.</p>
+          <h3 class="section-heading gold">FEATURED PROJECTS</h3>
+        </div>
+        <a href="#" class="view-all">View All Projects →</a>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-label="AI Productivity Platform">
+          <div class="project-thumb" style="background:#0D1B2A;">
+            <img src="https://via.placeholder.com/300x180/0D1B2A/7c6af7?text=FocusPilot" alt="FocusPilot" />
+          </div>
+          <p class="project-name">FocusPilot</p>
+          <p class="project-sub">AI Productivity Platform</p>
+        </div>
+        <div class="project-card" data-label="Blockchain Identity Platform">
+          <div class="project-thumb" style="background:#0A1628;">
+            <img src="https://via.placeholder.com/300x180/0A1628/4fc3f7?text=TrustChain" alt="TrustChain" />
+          </div>
+          <p class="project-name">TrustChain</p>
+          <p class="project-sub">Blockchain Identity Platform</p>
+        </div>
+        <div class="project-card" data-label="Simplifying First Votes">
+          <div class="project-thumb" style="background:#f5f5f5;">
+            <img src="https://via.placeholder.com/300x180/f5f5f5/333?text=VoteEase" alt="VoteEase" />
+          </div>
+          <p class="project-name">VoteEase</p>
+          <p class="project-sub">Simplifying First Votes</p>
+        </div>
+        <div class="project-card" data-label="Transit Experience Redesign">
+          <div class="project-thumb" style="background:#1a1a2e;">
+            <img src="https://via.placeholder.com/300x180/1a1a2e/fff?text=Chennai+Metro" alt="Chennai Metro" />
+          </div>
+          <p class="project-name">Chennai Metro</p>
+          <p class="project-sub">Transit Experience Redesign</p>
+        </div>
+        <div class="project-card" data-label="Recycling Awareness Platform">
+          <div class="project-thumb" style="background:#1b3a1b;">
+            <img src="https://via.placeholder.com/300x180/1b3a1b/90ee90?text=Re:Start" alt="Re:Start" />
+          </div>
+          <p class="project-name">Re:Start</p>
+          <p class="project-sub">Recycling Awareness Platform</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</nav>
+  <div class="divider"></div>
 
-<!-- HERO -->
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="contact-left">
+        <p class="section-num">04.</p>
+        <h2 class="contact-heading gold">LET'S BUILD<br/>SOMETHING<br/>MEANINGFUL.</h2>
+      </div>
+      <div class="contact-right">
+        <p class="contact-body">I'm always open to discussing new opportunities, interesting projects or collaborations.</p>
+        <div class="contact-links">
+          <a href="https://linkedin.com/in/akshaya-r" target="_blank" class="contact-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/akshaya26-git" target="_blank" class="contact-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a href="https://behance.net/akshucharu" target="_blank" class="contact-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.7zM15.971 13h4.06c-.intensity 2.44-2.951 2.52-4.06 0zM7.239 10.65c1.02-.43 1.615-1.226 1.615-2.475 0-1.876-1.354-3.175-4.165-3.175H1v12h3.766c2.938 0 4.97-1.283 4.97-3.672 0-1.438-.743-2.427-2.497-2.678zM3.6 7.1h1.2c1.054 0 1.75.422 1.75 1.4 0 .989-.696 1.5-1.75 1.5H3.6V7.1zm1.35 7.9H3.6v-2.9h1.35c1.302 0 2.05.526 2.05 1.45 0 .924-.748 1.45-2.05 1.45z"/></svg>
+            Behance
+          </a>
+          <a href="mailto:akshaya@example.com" class="contact-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            Email Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-logo">AKSHAYA.</span>
+    <span class="footer-copy">© 2026 Akshaya R. All rights reserved.</span>
+    <span class="footer-right">Designed &amp; Built with Passion ♥</span>
+  </footer>
 
-<div class="hero-content">
-
-<p class="subtitle">
-UI/UX DESIGNER • WEB DEVELOPER • DATA SCIENCE
-</p>
-
-<h1>
-AKSHAYA R
-</h1>
-
-<h2>
-Designing Experiences.<br>
-Building Solutions.
-</h2>
-
-<p class="description">
-
-M.Sc Data Science Student at Women's Christian College (WCC).
-
-Currently working as a Marketing Intern at Hive Flexible Workspaces.
-
-I create meaningful digital experiences through design, development, research, and data-driven thinking.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="primary-btn">
-View Projects
-</a>
-
-<a href="#" class="secondary-btn">
-Download Resume
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STATS -->
-
-<section class="stats">
-
-<div class="stat-card">
-<h3>5+</h3>
-<p>Projects</p>
-</div>
-
-<div class="stat-card">
-<h3>2+</h3>
-<p>Internships</p>
-</div>
-
-<div class="stat-card">
-<h3>5+</h3>
-<p>Certifications</p>
-</div>
-
-<div class="stat-card">
-<h3>10+</h3>
-<p>Tools & Skills</p>
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="about">
-
-<div class="section-number">
-01
-</div>
-
-<div class="about-content">
-
-<h2>About Me</h2>
-
-<p>
-
-I am a UI/UX Designer and Web Developer passionate about building intuitive and impactful digital experiences.
-
-Currently pursuing M.Sc Data Science at Women's Christian College while contributing as a Marketing Intern at Hive Flexible Workspaces.
-
-My work combines design thinking, technology, and business understanding to create meaningful solutions.
-
-</p>
-
-<div class="about-grid">
-
-<div class="info-card">
-<h4>Education</h4>
-<p>M.Sc Data Science</p>
-<p>Women's Christian College</p>
-</div>
-
-<div class="info-card">
-<h4>Experience</h4>
-<p>Marketing Intern</p>
-<p>Hive Flexible Workspaces</p>
-</div>
-
-<div class="info-card">
-<h4>Location</h4>
-<p>Chennai</p>
-<p>India</p>
-</div>
-
-<div class="info-card">
-<h4>Status</h4>
-<p>Open to Opportunities</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- EXPERTISE -->
-
-<section id="expertise" class="expertise">
-
-<h2>My Expertise</h2>
-
-<div class="expertise-grid">
-
-<div class="expertise-card">
-<h3>UI/UX Design</h3>
-<ul>
-<li>User Research</li>
-<li>Wireframing</li>
-<li>Prototyping</li>
-<li>Design Systems</li>
-</ul>
-</div>
-
-<div class="expertise-card">
-<h3>Web Development</h3>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>React</li>
-</ul>
-</div>
-
-<div class="expertise-card">
-<h3>Data Science</h3>
-<ul>
-<li>Python</li>
-<li>Machine Learning</li>
-<li>NLP</li>
-<li>Analytics</li>
-</ul>
-</div>
-
-<div class="expertise-card">
-<h3>Marketing</h3>
-<ul>
-<li>Branding</li>
-<li>Content Strategy</li>
-<li>Campaign Design</li>
-<li>Social Media</li>
-</ul>
-</div>
-
-</div>
-
-</section>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
