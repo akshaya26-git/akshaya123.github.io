@@ -1,22 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Akshaya Portfolio</title>
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            text-align:center;
-            padding:80px;
-            background:#f5f5f5;
-        }
-        h1{
-            color:#890202;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Akshaya R | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0B0B0B;
+color:#F5F5F5;
+font-family:'Inter',sans-serif;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+
+background:rgba(11,11,11,.8);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid #1d1d1d;
+}
+
+.logo{
+font-family:'Space Grotesk',sans-serif;
+font-size:24px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul a{
+text-decoration:none;
+color:#bdbdbd;
+font-size:15px;
+}
+
+nav ul a:hover{
+color:#D8C8AE;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+gap:80px;
+}
+
+.left{
+flex:1;
+}
+
+.subtitle{
+letter-spacing:3px;
+font-size:12px;
+color:#8f8f8f;
+margin-bottom:25px;
+}
+
+.left h1{
+font-size:90px;
+line-height:.95;
+font-family:'Space Grotesk',sans-serif;
+margin-bottom:30px;
+}
+
+.description{
+font-size:18px;
+line-height:1.9;
+color:#bdbdbd;
+max-width:600px;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+}
+
+.primary-btn{
+padding:16px 32px;
+background:#D8C8AE;
+color:black;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+}
+
+.secondary-btn{
+padding:16px 32px;
+border:1px solid #2b2b2b;
+color:white;
+text-decoration:none;
+border-radius:50px;
+}
+
+/* VIDEO SECTION */
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.video-card{
+position:relative;
+width:450px;
+height:600px;
+overflow:hidden;
+border-radius:30px;
+border:1px solid #252525;
+}
+
+.video-card::before{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+background:#D8C8AE;
+filter:blur(150px);
+opacity:.15;
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:1;
+}
+
+.hero-video{
+width:100%;
+height:100%;
+object-fit:cover;
+position:relative;
+z-index:2;
+}
+
+.tag{
+position:absolute;
+padding:10px 16px;
+background:#121212;
+border:1px solid #2b2b2b;
+border-radius:40px;
+font-size:12px;
+z-index:5;
+}
+
+.tag1{
+top:20px;
+left:20px;
+}
+
+.tag2{
+top:20px;
+right:20px;
+}
+
+.tag3{
+bottom:20px;
+left:20px;
+}
+
+.tag4{
+bottom:20px;
+right:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+padding-top:150px;
+}
+
+.left h1{
+font-size:55px;
+text-align:center;
+}
+
+.subtitle,
+.description{
+text-align:center;
+}
+
+.buttons{
+justify-content:center;
+}
+
+nav ul{
+display:none;
+}
+
+.video-card{
+width:320px;
+height:420px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Akshaya</h1>
-    <h2>UI/UX Designer & Web Developer</h2>
-    <p>Creating meaningful digital experiences through design and development.</p>
+
+<nav>
+
+<div class="logo">
+AKSHAYA.
+</div>
+
+<ul>
+<li><a href="#">About</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#">Skills</a></li>
+<li><a href="#">Journey</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<p class="subtitle">
+UI/UX DESIGNER • WEB DEVELOPER • DATA SCIENCE
+</p>
+
+<h1>
+Designing<br>
+Experiences.<br>
+Building<br>
+Solutions.
+</h1>
+
+<p class="description">
+Currently pursuing M.Sc Data Science at Women's Christian College (WCC) while working as a Marketing Intern at Hive Flexible Workspaces.
+
+I create intuitive digital experiences through design, development, research, and data-driven thinking.
+</p>
+
+<div class="buttons">
+
+<a href="#" class="primary-btn">
+View Projects
+</a>
+
+<a href="#" class="secondary-btn">
+Download Resume
+</a>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="video-card">
+
+<video autoplay muted loop playsinline class="hero-video">
+<source src="avatar.mp4" type="video/mp4">
+</video>
+
+<div class="tag tag1">WCC</div>
+<div class="tag tag2">FIGMA</div>
+<div class="tag tag3">DATA</div>
+<div class="tag tag4">CHENNAI</div>
+
+</div>
+
+</div>
+
+</section>
+
 </body>
 </html>
