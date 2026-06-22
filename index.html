@@ -12,275 +12,73 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-background:#0B0B0B;
-color:#F5F5F5;
-font-family:'Inter',sans-serif;
-overflow-x:hidden;
-}
-
-/* NAVBAR */
-
-nav{
-width:100%;
-padding:25px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:fixed;
-top:0;
-left:0;
-z-index:1000;
-
-background:rgba(11,11,11,.8);
-backdrop-filter:blur(12px);
-
-border-bottom:1px solid #1d1d1d;
-}
-
-.logo{
-font-family:'Space Grotesk',sans-serif;
-font-size:24px;
-font-weight:700;
-letter-spacing:2px;
-}
-
-nav ul{
-display:flex;
-gap:35px;
-list-style:none;
-}
-
-nav ul a{
-text-decoration:none;
-color:#bdbdbd;
-font-size:15px;
-}
-
-nav ul a:hover{
-color:#D8C8AE;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:120px 8%;
-gap:80px;
-}
-
-.left{
-flex:1;
-}
-
-.subtitle{
-letter-spacing:3px;
-font-size:12px;
-color:#8f8f8f;
-margin-bottom:25px;
-}
-
-.left h1{
-font-size:90px;
-line-height:.95;
-font-family:'Space Grotesk',sans-serif;
-margin-bottom:30px;
-}
-
-.description{
-font-size:18px;
-line-height:1.9;
-color:#bdbdbd;
-max-width:600px;
-margin-bottom:40px;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-}
-
-.primary-btn{
-padding:16px 32px;
-background:#D8C8AE;
-color:black;
-text-decoration:none;
-border-radius:50px;
-font-weight:600;
-}
-
-.secondary-btn{
-padding:16px 32px;
-border:1px solid #2b2b2b;
-color:white;
-text-decoration:none;
-border-radius:50px;
-}
-
-/* VIDEO SECTION */
-
-.right{
-flex:1;
-display:flex;
-justify-content:center;
-}
-
-.video-card{
-position:relative;
-width:450px;
-height:600px;
-overflow:hidden;
-border-radius:30px;
-border:1px solid #252525;
-}
-
-.video-card::before{
-content:"";
-position:absolute;
-width:450px;
-height:450px;
-background:#D8C8AE;
-filter:blur(150px);
-opacity:.15;
-border-radius:50%;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:1;
-}
-
-.hero-video{
-width:100%;
-height:100%;
-object-fit:cover;
-position:relative;
-z-index:2;
-}
-
-.tag{
-position:absolute;
-padding:10px 16px;
-background:#121212;
-border:1px solid #2b2b2b;
-border-radius:40px;
-font-size:12px;
-z-index:5;
-}
-
-.tag1{
-top:20px;
-left:20px;
-}
-
-.tag2{
-top:20px;
-right:20px;
-}
-
-.tag3{
-bottom:20px;
-left:20px;
-}
-
-.tag4{
-bottom:20px;
-right:20px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column;
-padding-top:150px;
-}
-
-.left h1{
-font-size:55px;
-text-align:center;
-}
-
-.subtitle,
-.description{
-text-align:center;
-}
-
-.buttons{
-justify-content:center;
-}
-
-nav ul{
-display:none;
-}
-
-.video-card{
-width:320px;
-height:420px;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
+<!-- VIDEO BACKGROUND -->
+
+<video autoplay muted loop playsinline class="background-video">
+    <source src="avatar.mp4.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
 
 <div class="logo">
 AKSHAYA.
 </div>
 
-<ul>
-<li><a href="#">About</a></li>
-<li><a href="#">Projects</a></li>
-<li><a href="#">Skills</a></li>
-<li><a href="#">Journey</a></li>
-<li><a href="#">Contact</a></li>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#expertise">Expertise</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#journey">Journey</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
+
+<a href="#contact" class="nav-btn">
+Let's Talk
+</a>
 
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="left">
+<div class="hero-content">
 
 <p class="subtitle">
 UI/UX DESIGNER • WEB DEVELOPER • DATA SCIENCE
 </p>
 
 <h1>
-Designing<br>
-Experiences.<br>
-Building<br>
-Solutions.
+AKSHAYA R
 </h1>
 
-<p class="description">
-Currently pursuing M.Sc Data Science at Women's Christian College (WCC) while working as a Marketing Intern at Hive Flexible Workspaces.
+<h2>
+Designing Experiences.<br>
+Building Solutions.
+</h2>
 
-I create intuitive digital experiences through design, development, research, and data-driven thinking.
+<p class="description">
+
+M.Sc Data Science Student at Women's Christian College (WCC).
+
+Currently working as a Marketing Intern at Hive Flexible Workspaces.
+
+I create meaningful digital experiences through design, development, research, and data-driven thinking.
+
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
 
-<a href="#" class="primary-btn">
+<a href="#projects" class="primary-btn">
 View Projects
 </a>
 
@@ -292,24 +90,140 @@ Download Resume
 
 </div>
 
-<div class="right">
+</section>
 
-<div class="video-card">
+<!-- STATS -->
 
-<video autoplay muted loop playsinline class="hero-video">
-<source src="avatar.mp4" type="video/mp4">
-</video>
+<section class="stats">
 
-<div class="tag tag1">WCC</div>
-<div class="tag tag2">FIGMA</div>
-<div class="tag tag3">DATA</div>
-<div class="tag tag4">CHENNAI</div>
+<div class="stat-card">
+<h3>5+</h3>
+<p>Projects</p>
+</div>
+
+<div class="stat-card">
+<h3>2+</h3>
+<p>Internships</p>
+</div>
+
+<div class="stat-card">
+<h3>5+</h3>
+<p>Certifications</p>
+</div>
+
+<div class="stat-card">
+<h3>10+</h3>
+<p>Tools & Skills</p>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="section-number">
+01
+</div>
+
+<div class="about-content">
+
+<h2>About Me</h2>
+
+<p>
+
+I am a UI/UX Designer and Web Developer passionate about building intuitive and impactful digital experiences.
+
+Currently pursuing M.Sc Data Science at Women's Christian College while contributing as a Marketing Intern at Hive Flexible Workspaces.
+
+My work combines design thinking, technology, and business understanding to create meaningful solutions.
+
+</p>
+
+<div class="about-grid">
+
+<div class="info-card">
+<h4>Education</h4>
+<p>M.Sc Data Science</p>
+<p>Women's Christian College</p>
+</div>
+
+<div class="info-card">
+<h4>Experience</h4>
+<p>Marketing Intern</p>
+<p>Hive Flexible Workspaces</p>
+</div>
+
+<div class="info-card">
+<h4>Location</h4>
+<p>Chennai</p>
+<p>India</p>
+</div>
+
+<div class="info-card">
+<h4>Status</h4>
+<p>Open to Opportunities</p>
+</div>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- EXPERTISE -->
+
+<section id="expertise" class="expertise">
+
+<h2>My Expertise</h2>
+
+<div class="expertise-grid">
+
+<div class="expertise-card">
+<h3>UI/UX Design</h3>
+<ul>
+<li>User Research</li>
+<li>Wireframing</li>
+<li>Prototyping</li>
+<li>Design Systems</li>
+</ul>
+</div>
+
+<div class="expertise-card">
+<h3>Web Development</h3>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>React</li>
+</ul>
+</div>
+
+<div class="expertise-card">
+<h3>Data Science</h3>
+<ul>
+<li>Python</li>
+<li>Machine Learning</li>
+<li>NLP</li>
+<li>Analytics</li>
+</ul>
+</div>
+
+<div class="expertise-card">
+<h3>Marketing</h3>
+<ul>
+<li>Branding</li>
+<li>Content Strategy</li>
+<li>Campaign Design</li>
+<li>Social Media</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
