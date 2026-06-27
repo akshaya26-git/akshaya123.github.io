@@ -1,410 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akshaya R — UI/UX Designer & Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akshaya | UI/UX Designer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
 </head>
+
 <body>
 
-  <!-- ══ CURSOR ══ -->
-  <div class="cursor" id="cursor"></div>
+<!--================ NAVBAR ================-->
 
-  <!-- ══ NAV ══ -->
-  <nav class="nav" id="nav">
-    <span class="nav-name">AKSHAYA R</span>
-    <ul class="nav-links">
-      <li><a href="#about">Identity</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="mailto:akshaya@example.com" class="nav-cta">Hire Me</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span>
-    </button>
-  </nav>
+<header>
 
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-close" id="mobileClose">✕</button>
-    <ul>
-      <li><a href="#about" onclick="closeMob()">Identity</a></li>
-      <li><a href="#expertise" onclick="closeMob()">Expertise</a></li>
-      <li><a href="#projects" onclick="closeMob()">Projects</a></li>
-      <li><a href="#contact" onclick="closeMob()">Contact</a></li>
-    </ul>
-  </div>
+<nav class="navbar">
 
-  <!-- ══ HERO ══ -->
-  <section class="hero" id="home">
+<div class="logo">
+AKSHAYA
+</div>
 
-    <!-- VIDEO: right-side anchored, fills right half -->
-    <div class="hero-video-wrap">
-      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
-        <source src="avatar.mp4.mp4" type="video/mp4" />
-      </video>
-      <!-- fade from left so text stays readable -->
-      <div class="hero-video-fade"></div>
-    </div>
+<ul class="nav-links">
 
-    <!-- dark base + bottom fade -->
-    <div class="hero-overlay-bottom"></div>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
 
-    <!-- LEFT: all text content -->
-    <div class="hero-content">
-      <p class="hero-eyebrow">
-        <span class="eyebrow-dot"></span>
-        DESIGN &nbsp;·&nbsp; SYSTEMS &nbsp;·&nbsp; DATA
-      </p>
+</ul>
 
-      <h1 class="hero-title">
-        <span class="title-line">Akshaya</span>
-        <span class="title-line title-accent">R</span>
-      </h1>
+<div class="resume-btn">
 
-      <p class="hero-descriptor">
-        UI/UX Designer &amp; Developer building digital experiences that blend
-        <em>design intuition</em> with <em>data-driven thinking</em> — across products,
-        platforms, and brands.
-      </p>
+<a href="assets/resume.pdf" target="_blank">
+Resume
+</a>
 
-      <div class="hero-meta">
-        <span class="meta-pill">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          2+ Yrs Building
-        </span>
-        <span class="meta-pill">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          5+ Certifications
-        </span>
-        <span class="meta-pill">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Chennai, India
-        </span>
-      </div>
+</div>
 
-      <div class="scroll-cue" id="scrollCue">
-        <span class="scroll-line"></span>
-        <span class="scroll-label">SCROLL</span>
-      </div>
-    </div>
+</nav>
 
-    <!-- BOTTOM CONTROLS: pause + mute/unmute — visible, interactive -->
-    <div class="hero-controls">
-      <!-- Pause / Play -->
-      <button class="hctrl-btn" id="vidToggle" aria-label="Pause/Play video">
-        <svg id="iconPause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-        <svg id="iconPlay" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><polygon points="5,3 19,12 5,21"/></svg>
-        <span id="lblPlayPause">PAUSE</span>
-      </button>
+</header>
 
-      <!-- Mute / Unmute -->
-      <button class="hctrl-btn" id="vidMute" aria-label="Mute/Unmute video">
-        <!-- sound on -->
-        <svg id="iconSound" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-          <path d="M19.07 4.93a10 10 0 010 14.14"/>
-          <path d="M15.54 8.46a5 5 0 010 7.07"/>
-        </svg>
-        <!-- muted -->
-        <svg id="iconMuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-          <line x1="23" y1="9" x2="17" y2="15"/>
-          <line x1="17" y1="9" x2="23" y2="15"/>
-        </svg>
-        <span id="lblMute">UNMUTE</span>
-      </button>
-    </div>
 
-  </section>
+<!--================ HERO ================-->
 
-  <!-- ══ IDENTITY MATRIX ══ -->
-  <section class="identity" id="about">
-    <div class="identity-inner">
-      <div class="identity-photo-col">
-        <div class="identity-photo-wrap">
-          <video class="identity-video" autoplay muted loop playsinline>
-            <source src="avatar.mp4.mp4" type="video/mp4" />
-          </video>
-          <div class="identity-photo-border"></div>
-        </div>
-        <p class="identity-sig">Akshaya</p>
-        <div class="identity-socials">
-          <a href="https://linkedin.com" target="_blank" title="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://behance.net/akshucharu" target="_blank" title="Behance">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-5.968h4.973c-.315-1.267-1.121-2.032-2.573-2.032-1.463 0-2.318.755-2.4 2.032zm-13 7.968H1V7h5.5c3.038 0 4.5 1.461 4.5 3.5s-1.262 3.5-4.5 3.5H3v3zm3.5-7.5c1.5 0 2-.552 2-1.5S8 9 6.5 9H3v3h3.5z"/></svg>
-          </a>
-        </div>
-      </div>
+<section class="hero" id="home">
 
-      <div class="identity-content">
-        <p class="section-eyebrow">MY IDENTITY MATRIX</p>
-        <div class="identity-tags">
-          <span class="itag active">UX</span>
-          <span class="itag">DEVELOPMENT</span>
-          <span class="itag">DATA SCIENCE</span>
-          <span class="itag">MARKETING</span>
-          <span class="itag">0 → 1 BUILDER</span>
-        </div>
-        <p class="identity-bio">
-          Designer and developer with hands-on experience building digital products and marketing systems. I've led end-to-end UX processes — from user research and wireframing to prototyping and handoff — while simultaneously building responsive, production-grade interfaces.
-        </p>
-        <p class="identity-bio">
-          My strength lies in <strong>bridging the gap between design and data</strong> — creating experiences that are not just beautiful, but measurable, user-centered, and built to perform. I bring a strong balance of design craft, front-end development, and analytical thinking that enables me to drive meaningful outcomes across SaaS, civic tech, and brand platforms.
-        </p>
-        <div class="identity-facts">
-          <div class="fact">
-            <span class="fact-label">Education</span>
-            <span class="fact-value">M.Sc Data Science · Women's Christian College</span>
-          </div>
-          <div class="fact">
-            <span class="fact-label">Experience</span>
-            <span class="fact-value">Marketing Intern · Hive Flexible Workspaces</span>
-          </div>
-          <div class="fact">
-            <span class="fact-label">Previous</span>
-            <span class="fact-value">NLP Intern · Tata Consultancy Services</span>
-          </div>
-          <div class="fact">
-            <span class="fact-label">Status</span>
-            <span class="fact-value fact-open">● Open to Opportunities</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="hero-left">
 
-  <!-- ══ PHILOSOPHY / CORE BELIEFS ══ -->
-  <section class="beliefs">
-    <div class="beliefs-inner">
-      <p class="section-eyebrow">MY CORE PHILOSOPHY</p>
-      <h2 class="beliefs-headline">
-        Great experiences are built on empathy — shaped by data, craft, and the courage to simplify.
-      </h2>
-      <p class="beliefs-sub">
-        I operate at the intersection of design, development, and data — ensuring that what I build is not just visually compelling, but intuitive, scalable, and impactful.
-      </p>
+<p class="tag">
 
-      <div class="stats-row">
-        <div class="stat-block">
-          <span class="stat-num" data-target="2">0</span><span class="stat-unit">+</span>
-          <p>Internships</p>
-        </div>
-        <div class="stat-block">
-          <span class="stat-num" data-target="5">0</span><span class="stat-unit">+</span>
-          <p>Certifications</p>
-        </div>
-        <div class="stat-block">
-          <span class="stat-num stat-pct" data-target="100">0</span><span class="stat-unit">%</span>
-          <p>User-Centered</p>
-        </div>
-        <div class="stat-block">
-          <span class="stat-num" data-target="10">0</span><span class="stat-unit">+</span>
-          <p>Tools Mastered</p>
-        </div>
-      </div>
+UI / UX DESIGNER • FRONTEND DEVELOPER
 
-      <div class="roles-row">
-        <div class="role-card">
-          <span class="role-num">I</span>
-          <h4>The Designer</h4>
-          <p>I design systems that make products feel human — turning vague problems into structured, intuitive interfaces with clear information architecture and purposeful visual language.</p>
-        </div>
-        <div class="role-card">
-          <span class="role-num">II</span>
-          <h4>The Builder</h4>
-          <p>A requirement-to-reality approach — I write clean, responsive HTML/CSS/JS and React code, paired with a data-science mindset that makes every decision traceable and testable.</p>
-        </div>
-        <div class="role-card">
-          <span class="role-num">III</span>
-          <h4>The Strategist</h4>
-          <p>From social content calendars to competitive analysis and brand systems — I understand how design serves business outcomes and build work that moves metrics, not just pixels.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+</p>
 
-  <!-- ══ EXPERTISE ══ -->
-  <section class="expertise" id="expertise">
-    <div class="expertise-inner">
-      <p class="section-eyebrow">SKILL SYSTEM</p>
-      <h2 class="expertise-headline">What I bring to every project.</h2>
+<h1>
 
-      <div class="skills-grid">
-        <div class="skill-card sk-featured">
-          <div class="sk-icon">◈</div>
-          <h3>UI/UX Design</h3>
-          <p>User research, wireframing, prototyping, design systems, interaction design, usability testing, Figma.</p>
-          <div class="sk-tags">
-            <span>Figma</span><span>Prototyping</span><span>Design Systems</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="sk-icon">⟨/⟩</div>
-          <h3>Web Development</h3>
-          <p>HTML, CSS, JavaScript, React.js, Tailwind CSS, responsive design, GitHub Pages deployment.</p>
-          <div class="sk-tags">
-            <span>React</span><span>Tailwind</span><span>GitHub</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="sk-icon">◉</div>
-          <h3>Data Science</h3>
-          <p>Machine learning, NLP, data analytics, data visualization, Python, Google Colab.</p>
-          <div class="sk-tags">
-            <span>Python</span><span>ML</span><span>NLP</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="sk-icon">▲</div>
-          <h3>Marketing</h3>
-          <p>Content strategy, social media systems, campaign design, brand identity, competitive analysis.</p>
-          <div class="sk-tags">
-            <span>Content</span><span>Branding</span><span>Strategy</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+Hi,
+<br>
 
-  <!-- ══ PROJECTS ══ -->
-  <section class="projects" id="projects">
-    <div class="projects-inner">
-      <div class="projects-head">
-        <p class="section-eyebrow">SELECTED WORK</p>
-        <h2 class="projects-headline">Built with purpose.</h2>
-      </div>
+I'm
 
-      <div class="project-list">
+<span>Akshaya.</span>
 
-        <div class="project-item pi-featured" data-num="01">
-          <div class="pi-meta">
-            <span class="pi-tag">AI Platform</span>
-            <h3 class="pi-title">FocusPilot</h3>
-            <p class="pi-desc">An AI-powered productivity platform with dark cosmic design, real-time analytics dashboards, and adaptive focus sessions. Full UX case study — research, persona mapping, prototyping, and front-end build.</p>
-            <a href="#" class="pi-link">View Case Study →</a>
-          </div>
-          <div class="pi-visual pi-v1">
-            <div class="pi-visual-label">AI Productivity · UX + Frontend</div>
-          </div>
-        </div>
+</h1>
 
-        <div class="project-item" data-num="02">
-          <div class="pi-meta">
-            <span class="pi-tag">Blockchain</span>
-            <h3 class="pi-title">TrustChain</h3>
-            <p class="pi-desc">Blockchain-based identity verification platform. Designed a trust-first UX that demystifies complex Web3 flows for everyday users.</p>
-            <a href="#" class="pi-link">View Case Study →</a>
-          </div>
-          <div class="pi-visual pi-v2">
-            <div class="pi-visual-label">Identity · Web3 UX</div>
-          </div>
-        </div>
+<p class="hero-description">
 
-        <div class="project-item" data-num="03">
-          <div class="pi-meta">
-            <span class="pi-tag">Civic Tech</span>
-            <h3 class="pi-title">VoteEase</h3>
-            <p class="pi-desc">A first-voter onboarding experience designed to simplify the electoral process with accessible, mobile-first UI and plain-language guidance.</p>
-            <a href="#" class="pi-link">View Case Study →</a>
-          </div>
-          <div class="pi-visual pi-v3">
-            <div class="pi-visual-label">Civic · Mobile UX</div>
-          </div>
-        </div>
+I design thoughtful digital experiences that blend
+creativity, usability, and clean development.
 
-        <div class="project-item" data-num="04">
-          <div class="pi-meta">
-            <span class="pi-tag">Transport UX</span>
-            <h3 class="pi-title">Chennai Metro</h3>
-            <p class="pi-desc">Complete transit experience redesign — wayfinding system, app interface, and multi-lingual accessibility improvements for urban commuters.</p>
-            <a href="#" class="pi-link">View Case Study →</a>
-          </div>
-          <div class="pi-visual pi-v4">
-            <div class="pi-visual-label">Transit · Systems Design</div>
-          </div>
-        </div>
+Focused on crafting intuitive interfaces
+that leave lasting impressions.
 
-        <div class="project-item" data-num="05">
-          <div class="pi-meta">
-            <span class="pi-tag">Sustainability</span>
-            <h3 class="pi-title">Re:Start</h3>
-            <p class="pi-desc">Recycling awareness platform with gamified engagement loops, community reporting tools, and an educational content system.</p>
-            <a href="#" class="pi-link">View Case Study →</a>
-          </div>
-          <div class="pi-visual pi-v5">
-            <div class="pi-visual-label">Green Tech · UX</div>
-          </div>
-        </div>
+</p>
 
-      </div>
-    </div>
-  </section>
+<div class="hero-buttons">
 
-  <!-- ══ CONTACT ══ -->
-  <section class="contact" id="contact">
-    <div class="contact-inner">
-      <p class="section-eyebrow">GET IN TOUCH</p>
-      <h2 class="contact-headline">
-        Let's build something<br /><span class="contact-accent">meaningful.</span>
-      </h2>
-      <p class="contact-sub">Open to full-time roles, freelance collaborations, and interesting projects. Always happy to talk design, data, or anything in between.</p>
+<a href="#projects" class="primary-btn">
 
-      <div class="contact-links">
-        <a href="https://linkedin.com" target="_blank" class="c-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/akshaya26-git" target="_blank" class="c-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          GitHub
-        </a>
-        <a href="https://behance.net/akshucharu" target="_blank" class="c-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-5.968h4.973c-.315-1.267-1.121-2.032-2.573-2.032-1.463 0-2.318.755-2.4 2.032zm-13 7.968H1V7h5.5c3.038 0 4.5 1.461 4.5 3.5s-1.262 3.5-4.5 3.5H3v3zm3.5-7.5c1.5 0 2-.552 2-1.5S8 9 6.5 9H3v3h3.5z"/></svg>
-          Behance
-        </a>
-        <a href="mailto:akshaya@example.com" class="c-link c-link-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email Me
-        </a>
-      </div>
+View Projects
 
-      <div class="contact-ticker">
-        <div class="ticker-track">
-          <span>AVAILABLE FOR WORK</span>
-          <span class="ticker-dot">◆</span>
-          <span>UI/UX DESIGN</span>
-          <span class="ticker-dot">◆</span>
-          <span>FRONT-END DEVELOPMENT</span>
-          <span class="ticker-dot">◆</span>
-          <span>DATA SCIENCE</span>
-          <span class="ticker-dot">◆</span>
-          <span>AVAILABLE FOR WORK</span>
-          <span class="ticker-dot">◆</span>
-          <span>UI/UX DESIGN</span>
-          <span class="ticker-dot">◆</span>
-          <span>FRONT-END DEVELOPMENT</span>
-          <span class="ticker-dot">◆</span>
-          <span>DATA SCIENCE</span>
-          <span class="ticker-dot">◆</span>
-        </div>
-      </div>
-    </div>
-  </section>
+</a>
 
-  <!-- ══ FOOTER ══ -->
-  <footer class="footer">
-    <span class="footer-logo">AKSHAYA R</span>
-    <span class="footer-copy">© 2026 · Designed & Built by Akshaya R</span>
-    <span class="footer-right">Chennai, India</span>
-  </footer>
+<a href="assets/resume.pdf" class="secondary-btn" target="_blank">
 
-  <script src="script.js"></script>
+Download Resume
+
+</a>
+
+</div>
+
+<div class="socials">
+
+<a href="#"><i class="ri-github-fill"></i></a>
+
+<a href="#"><i class="ri-linkedin-fill"></i></a>
+
+<a href="#"><i class="ri-behance-fill"></i></a>
+
+<a href="#"><i class="ri-mail-fill"></i></a>
+
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<div class="video-container">
+
+<video
+id="avatarVideo"
+autoplay
+loop
+muted
+playsinline
+poster="assets/images/profile.jpg">
+
+<source src="assets/videos/avatar.mp4" type="video/mp4">
+
+</video>
+
+<button id="playAudio">
+
+<i class="ri-volume-up-fill"></i>
+
+Play Audio
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--================ SCROLL INDICATOR ================-->
+
+<div class="scroll-indicator">
+
+<span></span>
+
+</div>
+
+
+<!--================ ABOUT ================-->
+
+<section id="about" class="about">
+
+<div class="container">
+
+<h2>
+
+About Me
+
+</h2>
+
+<p>
+
+I am a passionate UI/UX Designer and Front-End Developer who enjoys turning complex problems into intuitive digital experiences.
+
+My work combines research, interaction design, visual storytelling, and clean development to create products that are both functional and engaging.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!--================ PROJECTS ================-->
+
+<section id="projects" class="projects">
+
+<div class="container">
+
+<h2>
+
+Featured Projects
+
+</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<h3>FocusPilot</h3>
+
+<p>
+
+AI Productivity Application
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>TrustChain</h3>
+
+<p>
+
+Blockchain Education Platform
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>DigiLocker</h3>
+
+<p>
+
+UX Case Study
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>ManyJobs</h3>
+
+<p>
+
+Job Portal UI Design
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!--================ CONTACT ================-->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<h2>
+
+Let's Build Something Meaningful
+
+</h2>
+
+<p>
+
+Interested in working together?
+
+Let's connect.
+
+</p>
+
+<a href="mailto:yourmail@gmail.com">
+
+Get In Touch
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!--================ FOOTER ================-->
+
+<footer>
+
+<p>
+
+© 2026 Akshaya.
+Designed & Developed by Akshaya.
+
+</p>
+
+</footer>
+
+
+
+<!--================ JS ================-->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
