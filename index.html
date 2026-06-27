@@ -41,18 +41,20 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero" id="home">
-    <!-- full-bleed video/photo background -->
-    <div class="hero-media">
+
+    <!-- VIDEO: right-side anchored, fills right half -->
+    <div class="hero-video-wrap">
       <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
         <source src="avatar.mp4.mp4" type="video/mp4" />
       </video>
-      <div class="hero-media-fallback"></div>
+      <!-- fade from left so text stays readable -->
+      <div class="hero-video-fade"></div>
     </div>
 
-    <!-- gradient overlays -->
-    <div class="hero-overlay-left"></div>
+    <!-- dark base + bottom fade -->
     <div class="hero-overlay-bottom"></div>
 
+    <!-- LEFT: all text content -->
     <div class="hero-content">
       <p class="hero-eyebrow">
         <span class="eyebrow-dot"></span>
@@ -60,27 +62,27 @@
       </p>
 
       <h1 class="hero-title">
-        <span class="title-line" data-delay="0">Akshaya</span>
-        <span class="title-line title-accent" data-delay="120">R</span>
+        <span class="title-line">Akshaya</span>
+        <span class="title-line title-accent">R</span>
       </h1>
 
       <p class="hero-descriptor">
-        UI/UX Designer &amp; Developer building digital experiences that blend<br />
-        <em>design intuition</em> with <em>data-driven thinking</em> — across products,<br />
+        UI/UX Designer &amp; Developer building digital experiences that blend
+        <em>design intuition</em> with <em>data-driven thinking</em> — across products,
         platforms, and brands.
       </p>
 
       <div class="hero-meta">
         <span class="meta-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           2+ Yrs Building
         </span>
         <span class="meta-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           5+ Certifications
         </span>
         <span class="meta-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Chennai, India
         </span>
       </div>
@@ -91,11 +93,33 @@
       </div>
     </div>
 
-    <!-- pause/play -->
-    <button class="vid-toggle" id="vidToggle" aria-label="Pause video">
-      <svg id="iconPause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-      <svg id="iconPlay" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none"><polygon points="5,3 19,12 5,21"/></svg>
-    </button>
+    <!-- BOTTOM CONTROLS: pause + mute/unmute — visible, interactive -->
+    <div class="hero-controls">
+      <!-- Pause / Play -->
+      <button class="hctrl-btn" id="vidToggle" aria-label="Pause/Play video">
+        <svg id="iconPause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        <svg id="iconPlay" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><polygon points="5,3 19,12 5,21"/></svg>
+        <span id="lblPlayPause">PAUSE</span>
+      </button>
+
+      <!-- Mute / Unmute -->
+      <button class="hctrl-btn" id="vidMute" aria-label="Mute/Unmute video">
+        <!-- sound on -->
+        <svg id="iconSound" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M19.07 4.93a10 10 0 010 14.14"/>
+          <path d="M15.54 8.46a5 5 0 010 7.07"/>
+        </svg>
+        <!-- muted -->
+        <svg id="iconMuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <span id="lblMute">UNMUTE</span>
+      </button>
+    </div>
+
   </section>
 
   <!-- ══ IDENTITY MATRIX ══ -->
