@@ -40,24 +40,55 @@ hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
 mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
 function closeMob() { mobileNav.classList.remove('open'); }
 
-/* ── VIDEO TOGGLE ── */
-const heroVideo  = document.getElementById('heroVideo');
-const vidToggle  = document.getElementById('vidToggle');
-const iconPause  = document.getElementById('iconPause');
-const iconPlay   = document.getElementById('iconPlay');
+/* ── VIDEO CONTROLS: PAUSE/PLAY + MUTE/UNMUTE ── */
+const heroVideo   = document.getElementById('heroVideo');
+const vidToggle   = document.getElementById('vidToggle');
+const vidMute     = document.getElementById('vidMute');
+const iconPause   = document.getElementById('iconPause');
+const iconPlay    = document.getElementById('iconPlay');
+const iconSound   = document.getElementById('iconSound');
+const iconMuted   = document.getElementById('iconMuted');
+const lblPlayPause = document.getElementById('lblPlayPause');
+const lblMute     = document.getElementById('lblMute');
 
-if (heroVideo && vidToggle) {
-  vidToggle.addEventListener('click', () => {
-    if (heroVideo.paused) {
-      heroVideo.play();
-      iconPause.style.display = '';
-      iconPlay.style.display  = 'none';
-    } else {
-      heroVideo.pause();
-      iconPause.style.display = 'none';
-      iconPlay.style.display  = '';
-    }
-  });
+// Video starts muted (browser autoplay policy requires this)
+// User must click UNMUTE to hear audio
+if (heroVideo) {
+  heroVideo.muted = true;
+
+  // Pause / Play
+  if (vidToggle) {
+    vidToggle.addEventListener('click', () => {
+      if (heroVideo.paused) {
+        heroVideo.play();
+        iconPause.style.display = '';
+        iconPlay.style.display  = 'none';
+        if (lblPlayPause) lblPlayPause.textContent = 'PAUSE';
+      } else {
+        heroVideo.pause();
+        iconPause.style.display = 'none';
+        iconPlay.style.display  = '';
+        if (lblPlayPause) lblPlayPause.textContent = 'PLAY';
+      }
+    });
+  }
+
+  // Mute / Unmute
+  if (vidMute) {
+    vidMute.addEventListener('click', () => {
+      if (heroVideo.muted) {
+        heroVideo.muted = false;
+        iconSound.style.display = '';
+        iconMuted.style.display = 'none';
+        if (lblMute) lblMute.textContent = 'MUTE';
+      } else {
+        heroVideo.muted = true;
+        iconSound.style.display = 'none';
+        iconMuted.style.display = '';
+        if (lblMute) lblMute.textContent = 'UNMUTE';
+      }
+    });
+  }
 }
 
 /* ── STAT COUNT-UP ── */
