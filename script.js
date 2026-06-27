@@ -1,189 +1,102 @@
-/* ══════════════════════════════════════════
-   AKSHAYA R · PORTFOLIO · script.js
-══════════════════════════════════════════ */
+/* ─────────────────────────────────────────
+   AKSHAYA R — Portfolio JS
+   ───────────────────────────────────────── */
 
-/* ── CUSTOM CURSOR ── */
-const cursor = document.getElementById('cursor');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-(function animCursor() {
-  cursorX += (mouseX - cursorX) * 0.14;
-  cursorY += (mouseY - cursorY) * 0.14;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top  = cursorY + 'px';
-  requestAnimationFrame(animCursor);
-})();
-
-document.querySelectorAll('a, button, .project-item, .role-card, .skill-card').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('big'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
-});
-
-/* ── NAV: solidify on scroll ── */
-const nav = document.getElementById('nav');
+// 1. Nav: add .scrolled class on scroll
+const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('solid', window.scrollY > 60);
-}, { passive: true });
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
 
-/* ── MOBILE NAV ── */
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-const mobileClose = document.getElementById('mobileClose');
-
-hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
-mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
-function closeMob() { mobileNav.classList.remove('open'); }
-
-/* ── VIDEO CONTROLS: PAUSE/PLAY + MUTE/UNMUTE ── */
-const heroVideo   = document.getElementById('heroVideo');
-const vidToggle   = document.getElementById('vidToggle');
-const vidMute     = document.getElementById('vidMute');
-const iconPause   = document.getElementById('iconPause');
-const iconPlay    = document.getElementById('iconPlay');
-const iconSound   = document.getElementById('iconSound');
-const iconMuted   = document.getElementById('iconMuted');
-const lblPlayPause = document.getElementById('lblPlayPause');
-const lblMute     = document.getElementById('lblMute');
-
-// Video starts muted (browser autoplay policy requires this)
-// User must click UNMUTE to hear audio
-if (heroVideo) {
-  heroVideo.muted = true;
-
-  // Pause / Play
-  if (vidToggle) {
-    vidToggle.addEventListener('click', () => {
-      if (heroVideo.paused) {
-        heroVideo.play();
-        iconPause.style.display = '';
-        iconPlay.style.display  = 'none';
-        if (lblPlayPause) lblPlayPause.textContent = 'PAUSE';
-      } else {
-        heroVideo.pause();
-        iconPause.style.display = 'none';
-        iconPlay.style.display  = '';
-        if (lblPlayPause) lblPlayPause.textContent = 'PLAY';
-      }
-    });
-  }
-
-  // Mute / Unmute
-  if (vidMute) {
-    vidMute.addEventListener('click', () => {
-      if (heroVideo.muted) {
-        heroVideo.muted = false;
-        iconSound.style.display = '';
-        iconMuted.style.display = 'none';
-        if (lblMute) lblMute.textContent = 'MUTE';
-      } else {
-        heroVideo.muted = true;
-        iconSound.style.display = 'none';
-        iconMuted.style.display = '';
-        if (lblMute) lblMute.textContent = 'UNMUTE';
-      }
-    });
-  }
-}
-
-/* ── STAT COUNT-UP ── */
-function countUp(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const isPct  = el.classList.contains('stat-pct');
-  const dur    = isPct ? 1800 : 1200;
-  const step   = dur / 60;
-  let current  = 0;
-  const inc    = target / (dur / (1000 / 60));
-
-  const timer = setInterval(() => {
-    current += inc;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
+// 2. Scroll-reveal for .reveal elements
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
-    el.textContent = Math.floor(current);
-  }, 1000 / 60);
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// 3. Stagger children of grids for a cascade effect
+const staggerTargets = document.querySelectorAll(
+  '.roles-grid, .skills-grid, .identity-tags'
+);
+staggerTargets.forEach(parent => {
+  Array.from(parent.children).forEach((child, i) => {
+    child.style.transitionDelay = `${i * 80}ms`;
+  });
+});
+
+// 4. Mobile hamburger (basic toggle — expand nav-links)
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '60px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'rgba(13,13,11,.98)';
+    navLinks.style.padding = '20px 24px';
+    navLinks.style.borderBottom = '1px solid #2a2a26';
+    if (open) navLinks.style.display = 'none';
+  });
+
+  // close on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { navLinks.style.display = 'none'; });
+  });
 }
 
-/* ── SCROLL OBSERVER ── */
-const io = new IntersectionObserver((entries) => {
+// 5. Smooth active link highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+
+const activeLinkObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navAnchors.forEach(a => a.style.color = '');
+      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (active) active.style.color = '#E8651A';
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(s => activeLinkObserver.observe(s));
+
+// 6. Stat counter animation
+const statNums = document.querySelectorAll('.stat-num');
+
+const countObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
-
     const el = entry.target;
+    const text = el.textContent;
+    const num  = parseInt(text.replace(/\D/g, ''), 10);
+    if (isNaN(num)) return;
 
-    // reveal animations
-    if (el.classList.contains('reveal') || el.classList.contains('reveal-left')) {
-      el.classList.add('in');
-    }
-
-    // timeline items
-    if (el.classList.contains('timeline-item')) {
-      el.classList.add('visible');
-    }
-
-    // count-up stats
-    if (el.classList.contains('stat-num') && !el.dataset.counted) {
-      el.dataset.counted = 'true';
-      countUp(el);
-    }
-
-    io.unobserve(el);
+    const sup = el.querySelector('sup');
+    const suffix = sup ? sup.textContent : '';
+    let start = 0;
+    const duration = 900;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * num);
+      if (sup) el.appendChild(sup);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+    countObserver.unobserve(el);
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.5 });
 
-/* mark elements for observation */
-document.querySelectorAll(
-  '.identity-inner, .beliefs-inner, .expertise-inner, .projects-inner, .contact-inner, ' +
-  '.project-item, .role-card, .skill-card, .fact, .stat-num, .timeline-item'
-).forEach(el => {
-  if (!el.classList.contains('stat-num')) {
-    el.classList.add('reveal');
-  }
-  io.observe(el);
-});
-
-/* re-observe stat nums specifically */
-document.querySelectorAll('.stat-num').forEach(el => io.observe(el));
-
-/* ── IDENTITY TAG FILTER ── */
-const iTags = document.querySelectorAll('.itag');
-iTags.forEach(tag => {
-  tag.addEventListener('click', () => {
-    iTags.forEach(t => t.classList.remove('active'));
-    tag.classList.add('active');
-  });
-});
-
-/* ── SMOOTH ANCHOR OFFSET (for fixed nav) ── */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (!target) return;
-    e.preventDefault();
-    const offset = 80;
-    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
-  });
-});
-
-/* ── PROJECT ITEMS: stagger reveal ── */
-document.querySelectorAll('.project-item').forEach((el, i) => {
-  el.style.transitionDelay = `${i * 0.07}s`;
-});
-
-/* ── SCROLL CUE: hide on first scroll ── */
-const scrollCue = document.getElementById('scrollCue');
-if (scrollCue) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      scrollCue.style.opacity = '0';
-      scrollCue.style.pointerEvents = 'none';
-    }
-  }, { once: true, passive: true });
-}
+statNums.forEach(el => countObserver.observe(el));
