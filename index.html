@@ -1,314 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Akshaya | UI/UX Designer</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshaya R — UI/UX Designer & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!--================ NAVBAR ================-->
-
-<header>
-
-<nav class="navbar">
-
-<div class="logo">
-AKSHAYA
-</div>
-
-<ul class="nav-links">
-
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-<div class="resume-btn">
-
-<a href="assets/resume.pdf" target="_blank">
-Resume
-</a>
-
-</div>
-
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Akshaya R</div>
+  <div class="nav-links">
+    <a href="#identity">Identity</a>
+    <a href="#philosophy">Expertise</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">☰</button>
 </nav>
 
-</header>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
 
+  <!-- VIDEO AVATAR — right side, hero -->
+  <div class="hero-avatar">
+    <video
+      class="hero-avatar-video"
+      src="avatar.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    ></video>
+    <div class="hero-avatar-fade"></div>
+  </div>
 
-<!--================ HERO ================-->
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>Design</span>
+      <span class="dot">·</span>
+      <span>Systems</span>
+      <span class="dot">·</span>
+      <span>Data</span>
+    </div>
 
-<section class="hero" id="home">
+    <h1 class="hero-name">
+      <span class="line1">Akshaya</span>
+      <span class="line2">R</span>
+    </h1>
 
-<div class="hero-left">
+    <p class="hero-desc">
+      UI/UX Designer &amp; Developer building digital experiences that blend
+      <strong>design intuition</strong> with <strong>data-driven thinking</strong>
+      — across products, platforms, and brands.
+    </p>
 
-<p class="tag">
+    <div class="hero-badges">
+      <div class="badge"><span class="badge-icon">⏱</span> 2+ Yrs Building</div>
+      <div class="badge"><span class="badge-icon">★</span> 5+ Certifications</div>
+      <div class="badge"><span class="badge-icon">📍</span> Chennai, India</div>
+    </div>
 
-UI / UX DESIGNER • FRONTEND DEVELOPER
-
-</p>
-
-<h1>
-
-Hi,
-<br>
-
-I'm
-
-<span>Akshaya.</span>
-
-</h1>
-
-<p class="hero-description">
-
-I design thoughtful digital experiences that blend
-creativity, usability, and clean development.
-
-Focused on crafting intuitive interfaces
-that leave lasting impressions.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="primary-btn">
-
-View Projects
-
-</a>
-
-<a href="assets/resume.pdf" class="secondary-btn" target="_blank">
-
-Download Resume
-
-</a>
-
-</div>
-
-<div class="socials">
-
-<a href="#"><i class="ri-github-fill"></i></a>
-
-<a href="#"><i class="ri-linkedin-fill"></i></a>
-
-<a href="#"><i class="ri-behance-fill"></i></a>
-
-<a href="#"><i class="ri-mail-fill"></i></a>
-
-</div>
-
-</div>
-
-
-<div class="hero-right">
-
-<div class="video-container">
-
-<video
-id="avatarVideo"
-autoplay
-loop
-muted
-playsinline
-poster="assets/images/profile.jpg">
-
-<source src="assets/videos/avatar.mp4" type="video/mp4">
-
-</video>
-
-<button id="playAudio">
-
-<i class="ri-volume-up-fill"></i>
-
-Play Audio
-
-</button>
-
-</div>
-
-</div>
-
+    <div class="hero-scroll">
+      <span class="scroll-line"></span>
+      <span>Scroll</span>
+    </div>
+  </div>
 </section>
 
+<!-- IDENTITY -->
+<section id="identity">
+  <p class="section-eyebrow">My Identity Matrix</p>
 
-<!--================ SCROLL INDICATOR ================-->
+  <div class="identity-grid">
+    <!-- Left: video card -->
+    <div class="identity-card-wrap">
+      <div class="identity-card">
+        <video
+          class="identity-card-video"
+          src="avatar.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+        <div class="identity-name">Akshaya</div>
+        <div class="identity-social">
+          <a href="https://linkedin.com" target="_blank" rel="noopener">in</a>
+          <a href="https://behance.net" target="_blank" rel="noopener">Bē</a>
+          <a href="https://github.com/akshaya26-git" target="_blank" rel="noopener">GH</a>
+        </div>
+      </div>
+    </div>
 
-<div class="scroll-indicator">
+    <!-- Right: bio -->
+    <div class="identity-content">
+      <div class="identity-tags">
+        <span class="tag active">UX</span>
+        <span class="tag">Development</span>
+        <span class="tag">Data Science</span>
+        <span class="tag">Marketing</span>
+        <span class="tag">0→1 Builder</span>
+      </div>
 
-<span></span>
+      <p class="identity-bio">
+        Designer and developer with hands-on experience building digital products and
+        marketing systems. I've led end-to-end UX processes — from user research and
+        wireframing to prototyping and handoff — while simultaneously building
+        responsive, production-grade interfaces.
+      </p>
+      <p class="identity-bio">
+        My strength lies in <strong>bridging the gap between design and data</strong> —
+        creating experiences that are not just beautiful, but measurable, user-centered,
+        and built to perform. I bring a strong balance of design craft, front-end
+        development, and analytical thinking that enables me to drive meaningful outcomes
+        across SaaS, civic tech, and brand platforms.
+      </p>
 
-</div>
-
-
-<!--================ ABOUT ================-->
-
-<section id="about" class="about">
-
-<div class="container">
-
-<h2>
-
-About Me
-
-</h2>
-
-<p>
-
-I am a passionate UI/UX Designer and Front-End Developer who enjoys turning complex problems into intuitive digital experiences.
-
-My work combines research, interaction design, visual storytelling, and clean development to create products that are both functional and engaging.
-
-</p>
-
-</div>
-
+      <div class="identity-meta">
+        <div class="meta-item">
+          <div class="meta-label">Education</div>
+          <div class="meta-value">M.Sc Data Science · Women's Christian College</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Experience</div>
+          <div class="meta-value">Marketing Intern · Hive Flexible Workspaces</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Previous</div>
+          <div class="meta-value">NLP Intern · Tata Consultancy Services</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Status</div>
+          <div class="meta-value"><span class="status-dot"></span>Open to Opportunities</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <p class="section-eyebrow">My Core Philosophy</p>
+  <h2 class="philosophy-headline">
+    Great experiences are built on empathy — shaped by data, craft, and the courage to simplify.
+  </h2>
+  <p class="philosophy-sub">
+    I operate at the intersection of design, development, and data — ensuring that what I
+    build is not just visually compelling, but intuitive, scalable, and impactful.
+  </p>
 
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num">2<sup>+</sup></div>
+      <div class="stat-label">Internships</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5<sup>+</sup></div>
+      <div class="stat-label">Certifications</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100<sup>%</sup></div>
+      <div class="stat-label">User-Centered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10<sup>+</sup></div>
+      <div class="stat-label">Tools Mastered</div>
+    </div>
+  </div>
 
-<!--================ PROJECTS ================-->
-
-<section id="projects" class="projects">
-
-<div class="container">
-
-<h2>
-
-Featured Projects
-
-</h2>
-
-<div class="project-grid">
-
-<div class="project-card">
-
-<h3>FocusPilot</h3>
-
-<p>
-
-AI Productivity Application
-
-</p>
-
-</div>
-
-<div class="project-card">
-
-<h3>TrustChain</h3>
-
-<p>
-
-Blockchain Education Platform
-
-</p>
-
-</div>
-
-<div class="project-card">
-
-<h3>DigiLocker</h3>
-
-<p>
-
-UX Case Study
-
-</p>
-
-</div>
-
-<div class="project-card">
-
-<h3>ManyJobs</h3>
-
-<p>
-
-Job Portal UI Design
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="roles-grid">
+    <div class="role-card reveal">
+      <div class="role-num">I</div>
+      <div class="role-title">The Designer</div>
+      <p class="role-desc">I design systems that make products feel human — turning vague problems into structured, intuitive interfaces with clear information architecture and purposeful visual language.</p>
+    </div>
+    <div class="role-card reveal">
+      <div class="role-num">II</div>
+      <div class="role-title">The Builder</div>
+      <p class="role-desc">A requirement-to-reality approach — I write clean, responsive HTML/CSS/JS and React code, paired with a data-science mindset that makes every decision traceable and testable.</p>
+    </div>
+    <div class="role-card reveal">
+      <div class="role-num">III</div>
+      <div class="role-title">The Strategist</div>
+      <p class="role-desc">From social content calendars to competitive analysis and brand systems — I understand how design serves business outcomes and build work that moves metrics, not just pixels.</p>
+    </div>
+  </div>
 </section>
 
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-eyebrow">Skill System</p>
+  <h2 class="section-title">What I bring to every project.</h2>
 
-
-<!--================ CONTACT ================-->
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<h2>
-
-Let's Build Something Meaningful
-
-</h2>
-
-<p>
-
-Interested in working together?
-
-Let's connect.
-
-</p>
-
-<a href="mailto:yourmail@gmail.com">
-
-Get In Touch
-
-</a>
-
-</div>
-
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">◈</div>
+      <div class="skill-name">UI/UX Design</div>
+      <p class="skill-desc">User research, wireframing, prototyping, design systems, interaction design, usability testing, Figma.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">Design Systems</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">&lt;/&gt;</div>
+      <div class="skill-name">Web Development</div>
+      <p class="skill-desc">HTML, CSS, JavaScript, React.js, Tailwind CSS, responsive design, GitHub Pages deployment.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Tailwind</span>
+        <span class="skill-tag">GitHub</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">◉</div>
+      <div class="skill-name">Data Science</div>
+      <p class="skill-desc">Machine learning, NLP, data analytics, data visualization, Python, Google Colab.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">ML</span>
+        <span class="skill-tag">NLP</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">▲</div>
+      <div class="skill-name">Marketing</div>
+      <p class="skill-desc">Content strategy, social media systems, campaign design, brand identity, competitive analysis.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Content</span>
+        <span class="skill-tag">Branding</span>
+        <span class="skill-tag">Strategy</span>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-eyebrow">Selected Work</p>
+  <h2 class="section-title">Built with purpose.</h2>
 
+  <div class="projects-list">
 
-<!--================ FOOTER ================-->
+    <div class="project-item reveal">
+      <div class="project-left">
+        <div class="project-num">01</div>
+        <div class="project-tag">AI Platform</div>
+        <div class="project-name">FocusPilot</div>
+        <p class="project-desc">An AI-powered productivity platform with dark cosmic design, real-time analytics dashboards, and adaptive focus sessions. Full UX case study — research, persona mapping, prototyping, and front-end build.</p>
+        <a href="#" class="project-link">View Case Study →</a>
+      </div>
+      <div class="project-right">
+        <div class="project-preview p1">
+          <span class="project-preview-label">AI Productivity · UX + Frontend</span>
+        </div>
+      </div>
+    </div>
 
+    <div class="project-item reveal">
+      <div class="project-left">
+        <div class="project-num">02</div>
+        <div class="project-tag">Blockchain</div>
+        <div class="project-name">TrustChain</div>
+        <p class="project-desc">Blockchain-based identity verification platform. Designed a trust-first UX that demystifies complex Web3 flows for everyday users.</p>
+        <a href="#" class="project-link">View Case Study →</a>
+      </div>
+      <div class="project-right">
+        <div class="project-preview p2">
+          <span class="project-preview-label">Identity · Web3 UX</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item reveal">
+      <div class="project-left">
+        <div class="project-num">03</div>
+        <div class="project-tag">Civic Tech</div>
+        <div class="project-name">VoteEase</div>
+        <p class="project-desc">A first-voter onboarding experience designed to simplify the electoral process with accessible, mobile-first UI and plain-language guidance.</p>
+        <a href="#" class="project-link">View Case Study →</a>
+      </div>
+      <div class="project-right">
+        <div class="project-preview p3">
+          <span class="project-preview-label">Civic · Mobile UX</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item reveal">
+      <div class="project-left">
+        <div class="project-num">04</div>
+        <div class="project-tag">Transport UX</div>
+        <div class="project-name">Chennai Metro</div>
+        <p class="project-desc">Complete transit experience redesign — wayfinding system, app interface, and multi-lingual accessibility improvements for urban commuters.</p>
+        <a href="#" class="project-link">View Case Study →</a>
+      </div>
+      <div class="project-right">
+        <div class="project-preview p4">
+          <span class="project-preview-label">Transit · Systems Design</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item reveal">
+      <div class="project-left">
+        <div class="project-num">05</div>
+        <div class="project-tag">Sustainability</div>
+        <div class="project-name">Re:Start</div>
+        <p class="project-desc">Recycling awareness platform with gamified engagement loops, community reporting tools, and an educational content system.</p>
+        <a href="#" class="project-link">View Case Study →</a>
+      </div>
+      <div class="project-right">
+        <div class="project-preview p5">
+          <span class="project-preview-label">Green Tech · UX</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-eyebrow">Get in Touch</p>
+  <h2 class="contact-headline">
+    <span class="l1">Let's build something</span>
+    <span class="l2">Meaningful.</span>
+  </h2>
+  <p class="contact-sub">Open to full-time roles, freelance collaborations, and interesting projects. Always happy to talk design, data, or anything in between.</p>
+
+  <div class="contact-links">
+    <a href="https://linkedin.com" target="_blank" class="contact-link">in LinkedIn</a>
+    <a href="https://github.com/akshaya26-git" target="_blank" class="contact-link">⌥ GitHub</a>
+    <a href="https://behance.net" target="_blank" class="contact-link">Bē Behance</a>
+    <a href="mailto:akshaya@email.com" class="contact-link primary">✉ Email Me</a>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">Available for Work</span>
+      <span class="ticker-item">UI/UX Design</span>
+      <span class="ticker-item">Front-End Development</span>
+      <span class="ticker-item">Data Science</span>
+      <span class="ticker-item">Available for Work</span>
+      <span class="ticker-item">UI/UX Design</span>
+      <span class="ticker-item">Front-End Development</span>
+      <span class="ticker-item">Data Science</span>
+      <span class="ticker-item">Available for Work</span>
+      <span class="ticker-item">UI/UX Design</span>
+      <span class="ticker-item">Front-End Development</span>
+      <span class="ticker-item">Data Science</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-
-<p>
-
-© 2026 Akshaya.
-Designed & Developed by Akshaya.
-
-</p>
-
+  <div class="f-logo">Akshaya R</div>
+  <div class="f-copy">© 2026 · Designed &amp; Built by Akshaya R</div>
+  <div class="f-loc">Chennai, India</div>
 </footer>
 
-
-
-<!--================ JS ================-->
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
 <script src="script.js"></script>
-
 </body>
-
 </html>
